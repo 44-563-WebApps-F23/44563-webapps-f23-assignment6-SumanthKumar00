@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Author</title>
+    </head>
+ 
+<body>
+
+<h2>Author entry Sumanth Kumar Sivadi</h2>
+
+<form>
+    <label for="Authorname">The hidden author name</label>
+    <input type ="password" id="Authorname" value="Dickens" min=10 max=50 step=2 value=30> <br>
+
+    <label for="guess">Guess the author</label>
+    <input type ="text" id="guess" autofocus> <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+<p id="result">This is result</p>
+
+<script> 
+    var good=0;
+    var oops=0;
+
+    function checkAuthor(){
+        console.log("Getting form values")
+        Authorname = document.getElementById("Authorname").value
+        guess = document.getElementById("guess").value
+
+        if(Authorname === guess){
+        good++;
+        alert("You got it right");
+        } 
+        else {
+        oops++;
+        alert("Sorry");
+        }
+
+        result = document.getElementById("result");
+        result.innerHTML = `Right: ${good}, Wrong: ${oops}`;
+}
+</script>
+
+</body>
+</html> 
