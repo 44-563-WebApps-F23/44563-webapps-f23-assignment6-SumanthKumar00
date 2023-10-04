@@ -9,23 +9,20 @@
 <h2>Sumanth Kumar Sivadi goes on a Cruise</h2>
 
 <form>
-    <input type="checkbox" id="Shares Cabin" name="cruise"   
-      value="True">
+    <input type="checkbox" id="Shares Cabin" name="cruise" value="True">
     <label for="Shares Cabin">Shares Cabin</label></br>
   
-    <input type="checkbox" id="Breakfast" name="cruise" 
-       value="True">
+    <input type="checkbox" id="Breakfast" name="cruise" value="True">
     <label for="Breakfast">Breakfast</label></br>
   
-    <input type="checkbox" id="Pool Pass" name="cruise"   
-       value="False">
+    <input type="checkbox" id="Pool Pass" name="cruise" value="False">
     <label for="Pool Pass">Pool Pass</label></br>
 
     <input type="button" onclick="selectCruise()" value="Select a cruise">
   </form>
 
 
-<p id="Selection"></p>
+<p id="Selection">Selected Cruise Status</p>
 
 <script> 
 
@@ -37,6 +34,34 @@ var my_cruise = {};
     my_cruise.pool = document.getElementById("Pool Pass").checked;
     Select_Cruise = document.getElementById("Selection")
     Select_Cruise.innerHTML = JSON.stringify(my_cruise);
+}
+</script>
+
+<h4><i>Enter the values to update the cruise</i></h4>
+<form>
+    <label for="Enter the number of days">Enter the number of days</label>
+    <input type ="text" id="Enter the number of days" name="Pricing" min=10 max=50 step=2 value=days> <br>
+
+    <label for="Enter price">Enter price</label>
+    <input type ="text" id="Enter price" name="Pricing" autofocus> <br>
+
+    <input type="button" onclick="updateCruise()" value="Update the cruise">
+</form>
+
+
+<p id="output">Updated Cruise Status</p>
+
+<script> 
+
+function updateCruise() {
+    days = document.getElementById("Enter the number of days").value;
+    price = document.getElementById("Enter price").value;
+
+    my_cruise["Days"] = days;
+    my_cruise["Price"] = price;
+
+    Update_Cruise = document.getElementById("output")
+    Update_Cruise.innerHTML = JSON.stringify(my_cruise);
 }
 </script>
 
