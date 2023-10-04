@@ -42,6 +42,31 @@
         result.innerHTML = `Right: ${good}, Wrong: ${oops}`;
 }
 </script>
+    <h3>Change Images</h3>
+    <div class="image" onclick="selectImage()">
+        <img src="Images/Seoul.jpg" alt="Seoul" width="100" height="100" id="image">
+    </div>
+<script>
+    var useImage = 1;
+    function selectImage(){
+        switch (useImage){
+            case 1:
+                document.getElementById("image").src='Images/Ioannina.jpg';
+                useImage = 2;
+                break;
+            case 2:
+                document.getElementById("image").src='Images/Venice.jpg';
+                useImage = 3;
+                break;
+            case 3:
+                document.getElementById("image").src='Images/Seoul.jpg';
+                useImage = 1;
+                break;
+            default:
+                break;
+        }
+    }
+</script>    
 
 </body>
 </html> 
