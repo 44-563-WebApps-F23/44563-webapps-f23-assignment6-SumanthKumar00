@@ -42,10 +42,13 @@
         result.innerHTML = `Right: ${good}, Wrong: ${oops}`;
 }
 </script>
-    <h3>Change Images</h3>
-    <div class="image" onclick="selectImage()">
-        <img src="Images/Seoul.jpg" alt="Seoul" width="100" height="100" id="image">
+
+    <h5><i>Click on the image to change to next image</i></h5>
+
+    <div class="image">
+        <img src="Images/Seoul.jpg" onclick="selectImage()" alt="Seoul" width="100" height="100" id="image">
     </div>
+    
 <script>
     var useImage = 1;
     function selectImage(){
