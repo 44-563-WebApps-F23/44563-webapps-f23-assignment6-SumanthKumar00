@@ -19,7 +19,7 @@
 </form>
 
 
-<p id="result">Tip</p>
+<p id="result">Tips</p>
 
 <script> 
 
@@ -39,6 +39,41 @@ function tips(){
 
 }
 </script>
+
+<h4><i>Select an option</i></h4>
+
+<form>
+    <input type="radio" id="sum" name="calculations" value="sum" onclick="chooseOp()"
+    checked >
+    <label for="sum">Sum</label></br>
+    <input type="radio" id="diff" name="calculations" onclick="chooseOp()"
+    value="difference">
+    <label for="diff">Difference</label></br>
+    <input type="radio" id="mult" name="calculations" onclick="chooseOp()"
+    value="product">
+    <label for="mult">Product</label></br>
+
+</form>
+
+  <p id="Calculations">Results</p>
+
+<script>
+  function chooseOp() {
+    console.log("Getting input")
+    basevalue = parseFloat(document.getElementById("base_amount").value)
+    tipvalue = parseFloat(document.getElementById("tip_percent").value)
+    total=document.getElementById("Calculations")
+    
+    if (document.getElementById("sum").checked) {
+        total.innerHTML="Sum of "+ basevalue+ " and "+ tipvalue+ " is "+ (basevalue+tipvalue)
+    }else if (document.getElementById("diff").checked) {
+        total.innerHTML="Difference of "+ basevalue+ " and "+ tipvalue+ " is "+ (basevalue-tipvalue)
+    }else  if (document.getElementById("mult").checked) {
+        total.innerHTML="Product of "+ basevalue+ " and "+ tipvalue+ " is "+ (basevalue*tipvalue)
+    }
+}
+</script>
+    
 
 </body>
 </html> 
